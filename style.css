@@ -1,0 +1,1005 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #090014;
+    color: white;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(9, 0, 20, 0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+
+    height: 75px;
+
+    margin: auto;
+
+    padding: 0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 30px;
+
+    font-weight: 900;
+
+    font-style: italic;
+}
+
+.logo span,
+.footer-logo span {
+    color: #ff3cac;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 28px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff3cac;
+}
+
+.menu-btn {
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 130px 8% 80px;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            #401064,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            #160d5c,
+            transparent 35%
+        ),
+        #090014;
+}
+
+.hero-content {
+    max-width: 750px;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.top-text {
+    color: #ff3cac;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 160px);
+
+    line-height: 0.8;
+
+    letter-spacing: -8px;
+
+    font-weight: 900;
+}
+
+.hero h1 span {
+    background: linear-gradient(
+        90deg,
+        #ff3cac,
+        #784ba0,
+        #2b86c5
+    );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    margin-top: 40px;
+
+    color: #c8bdd1;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+.hero-buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 16px 25px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #ff3cac;
+
+    color: white;
+}
+
+.secondary-btn {
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid #555;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform: translateY(-5px);
+}
+
+
+/* ================================
+   HERO ORB
+================================ */
+
+.hero-orb {
+    width: 360px;
+
+    height: 360px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #ff3cac,
+            #784ba0 45%,
+            #160d5c 70%,
+            transparent 71%
+        );
+
+    box-shadow:
+        0 0 80px rgba(255,60,172,0.3);
+
+    animation: orbFloat 5s ease-in-out infinite;
+}
+
+.hero-orb span {
+    font-size: 90px;
+
+    font-weight: 900;
+
+    font-style: italic;
+
+    text-shadow: 0 0 30px rgba(255,255,255,0.4);
+}
+
+@keyframes orbFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+/* ================================
+   STARS
+================================ */
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    opacity: 0.15;
+
+    animation: starsMove 15s linear infinite;
+}
+
+@keyframes starsMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-80px);
+    }
+
+}
+
+
+/* ================================
+   SECTIONS
+================================ */
+
+.section {
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 130px 30px;
+}
+
+.section-heading {
+    margin-bottom: 70px;
+}
+
+.section-heading p {
+    color: #ff3cac;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    font-size: clamp(45px, 6vw, 80px);
+
+    line-height: 0.9;
+
+    letter-spacing: -4px;
+}
+
+.section-heading h2 span {
+    color: #ff3cac;
+}
+
+
+/* ================================
+   SONG
+================================ */
+
+.song {
+    background: #0d0019;
+}
+
+.song-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 30px;
+}
+
+.song-card {
+    padding: 50px;
+
+    min-height: 450px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #24103b,
+            #10001d
+        );
+
+    border: 1px solid #382047;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+.record {
+    min-width: 220px;
+
+    width: 220px;
+
+    height: 220px;
+
+    border-radius: 50%;
+
+    background:
+        repeating-radial-gradient(
+            circle,
+            #171717 0px,
+            #171717 5px,
+            #242424 6px,
+            #171717 8px
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    animation: spin 12s linear infinite;
+}
+
+.record-center {
+    width: 80px;
+
+    height: 80px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #ff3cac;
+
+    font-weight: 900;
+}
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.small-label {
+    color: #ff3cac;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.song-card h3 {
+    font-size: 40px;
+
+    margin-bottom: 20px;
+}
+
+.song-card p {
+    color: #a99daf;
+
+    line-height: 1.7;
+}
+
+.facts {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.fact {
+    padding: 30px;
+
+    background: #120020;
+
+    border: 1px solid #2b1738;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition: 0.3s;
+}
+
+.fact:hover {
+    transform: translateY(-5px);
+
+    border-color: #ff3cac;
+}
+
+.fact span {
+    color: #8f8198;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.fact strong {
+    font-size: 18px;
+}
+
+
+/* ================================
+   MEMBERS
+================================ */
+
+.members {
+    background: #100020;
+}
+
+.member-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+}
+
+.member {
+    min-height: 300px;
+
+    padding: 25px;
+
+    background:
+        linear-gradient(
+            160deg,
+            #2b0c43,
+            #12001e
+        );
+
+    border: 1px solid #35194a;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    transition: 0.4s;
+}
+
+.member:hover {
+    transform: translateY(-15px) rotate(-2deg);
+
+    border-color: #ff3cac;
+}
+
+.member-number {
+    color: #ff3cac;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    margin-bottom: auto;
+}
+
+.member h3 {
+    font-size: 25px;
+}
+
+.member p {
+    color: #96899d;
+
+    margin-top: 8px;
+}
+
+
+/* ================================
+   QUOTE
+================================ */
+
+.quote-section {
+    min-height: 75vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 30px;
+
+    background:
+        radial-gradient(
+            circle,
+            #491166,
+            #090014 60%
+        );
+}
+
+.quote-content {
+    max-width: 1000px;
+}
+
+.quote-symbol {
+    font-size: 60px;
+
+    color: #ff3cac;
+
+    margin-bottom: 20px;
+}
+
+.quote-content h2 {
+    font-size: clamp(55px, 8vw, 110px);
+
+    line-height: 0.85;
+
+    letter-spacing: -5px;
+}
+
+.quote-content h2 span {
+    color: #ff3cac;
+}
+
+.quote-content p {
+    max-width: 650px;
+
+    margin: 35px auto 0;
+
+    color: #b6a8bd;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   MEANING
+================================ */
+
+.meaning-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.meaning-card {
+    min-height: 350px;
+
+    padding: 35px;
+
+    background: #12001e;
+
+    border: 1px solid #2b1738;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: 0.4s;
+}
+
+.meaning-card:hover {
+    transform: translateY(-10px);
+
+    background: #1b002c;
+}
+
+.meaning-card > span {
+    color: #ff3cac;
+
+    font-size: 30px;
+
+    font-weight: 900;
+}
+
+.meaning-card h3 {
+    margin-top: auto;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+.meaning-card p {
+    color: #988b9e;
+
+    line-height: 1.7;
+}
+
+
+/* ================================
+   INTERACTIVE
+================================ */
+
+.interactive {
+    padding: 130px 30px;
+
+    background: #ff3cac;
+
+    color: #12001e;
+
+    text-align: center;
+}
+
+.interactive-box {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+.interactive-box p {
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.interactive-box h2 {
+    font-size: clamp(45px, 7vw, 90px);
+
+    line-height: 0.9;
+
+    margin-bottom: 35px;
+}
+
+.interactive-box button {
+    padding: 16px 25px;
+
+    background: #12001e;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    transition: 0.3s;
+}
+
+.interactive-box button:hover {
+    transform: scale(1.05);
+}
+
+
+/* ================================
+   LEGACY
+================================ */
+
+.legacy {
+    min-height: 80vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #160027,
+            #090014
+        );
+}
+
+.legacy-content {
+    max-width: 900px;
+}
+
+.legacy-content > p:first-child {
+    color: #ff3cac;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+}
+
+.legacy h2 {
+    font-size: clamp(65px, 10vw, 140px);
+
+    line-height: 0.8;
+
+    letter-spacing: -7px;
+}
+
+.legacy h2 span {
+    color: #ff3cac;
+}
+
+.legacy-content > p {
+    max-width: 600px;
+
+    margin: 40px auto;
+
+    color: #a99dad;
+
+    line-height: 1.7;
+}
+
+.line {
+    width: 100px;
+
+    height: 2px;
+
+    background: #ff3cac;
+
+    margin: 40px auto;
+}
+
+.legacy h3 {
+    font-size: 20px;
+
+    letter-spacing: 4px;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    padding: 70px 30px;
+
+    text-align: center;
+
+    background: #050008;
+}
+
+.footer-logo {
+    font-size: 40px;
+
+    font-weight: 900;
+
+    font-style: italic;
+}
+
+footer p {
+    margin-top: 15px;
+
+    color: #8c7e92;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 25px;
+
+    color: #55495b;
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .hero {
+        flex-direction: column;
+
+        justify-content: center;
+
+        align-items: flex-start;
+    }
+
+    .hero-orb {
+        width: 250px;
+
+        height: 250px;
+
+        margin: 50px auto 0;
+    }
+
+    .song-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meaning-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .hero {
+        padding-left: 25px;
+
+        padding-right: 25px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .section {
+        padding: 90px 20px;
+    }
+
+    .song-card {
+        flex-direction: column;
+
+        padding: 30px;
+
+        align-items: flex-start;
+    }
+
+    .record {
+        width: 170px;
+
+        height: 170px;
+
+        min-width: 170px;
+    }
+
+    .facts {
+        grid-template-columns: 1fr;
+    }
+
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member {
+        min-height: 230px;
+    }
+
+}
